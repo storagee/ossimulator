@@ -57,7 +57,6 @@ public class CMD {
 		}
 		else if (commends[0].equals("delete")) {
 			if (commends.length == 2) {
-				this.fileManager.delete(commends[1]);
 				Boolean isSuccess = this.fileManager.delete(commends[1]);
 				if (isSuccess) {
 					String folderPath;
@@ -309,7 +308,7 @@ public class CMD {
 									"9.change dir/dir2/fil.js 1 将dir/dir2目录下的fil.js属性改为只读文件:1\n" +
 									"    普通文件:4, 系统文件:2\n\n" +
 									"10.format  格式化磁盘\n\n" +
-									"11.print  打印目录结构\n\n";
+									"11.print  打印目录结构\n\n另外，文件名、目录名应占3字节，如有后缀，占两字节";
 			JOptionPane.showOptionDialog(null, helpMessage, "目录结构", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
 		}
 		else {

@@ -383,7 +383,7 @@ public class FileManager extends Observable implements IFileManager {
 		if (isExist) {
 			if (isFile) {
 				DirEntry dirEntry = block.getDirEntryByName(name[0], isFile);
-				if (dirEntry != null) {
+				if (dirEntry != null && dirEntry.getProperty() > (byte) 0) {
 					this.disk.getFat().clear(dirEntry.getBeginBlock());
 					block.deleteFileEntryByName(name[0]);
 					System.out.println("已删除文件：" + fileName);
